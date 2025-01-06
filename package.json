@@ -1,0 +1,86 @@
+{
+  "name": "clean-arch-vs",
+  "displayName": "clean_arch_vs",
+  "description": "A extenstion to create flutter clean arch base project from scratch and also create interactor or view part and so on",
+  "version": "0.0.1",
+  "publisher": "ayalma",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/pubspec.yaml"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "clean-arch-vs.new",
+        "title": "Hello World"
+      },
+      {
+        "command": "clean-arch-vs.new_view",
+        "title":"New View"
+      },
+      {
+        "command": "clean-arch-vs.new_interactor",
+        "title":"New Interactor"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "clean-arch-vs.new_interactor",
+          "group": "0@0"
+        },
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "clean-arch-vs.new_view",
+          "group": "0@1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/change-case": "^2.3.1",
+    "@types/glob": "^8.1.0",
+    "@types/lodash": "^4.17.14",
+    "@types/mkdirp": "^2.0.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.16.0",
+    "glob": "^11.0.0",
+    "mocha": "^11.0.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.7.2",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "change-case": "^4.1.2",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21",
+    "mkdirp": "^3.0.1",
+    "semver": "^7.6.3"
+  }
+}
