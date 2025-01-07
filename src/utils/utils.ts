@@ -2,6 +2,8 @@ import { OpenDialogOptions, window } from "vscode";
 import * as _ from "lodash";
 import { mkdirp } from "mkdirp";
 
+export * from "./view_type";
+
 export async function promptForTargetDirectory(title:string): Promise<string | undefined> {
     const options: OpenDialogOptions = {
         canSelectMany: false,

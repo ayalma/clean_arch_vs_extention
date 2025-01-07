@@ -63,7 +63,7 @@ export function getInputPortConcreteTemplate(interactorName: String) {
         ${paccalCaseInteractorName}InputPortImpl(super.outputPort);
       
         @override
-        Future<void> call(${paccalCaseInteractorName}Input input) {
+        Future<void> call(${paccalCaseInteractorName}Input input) async{
           // TODO: implement call
           throw UnimplementedError();
         }
