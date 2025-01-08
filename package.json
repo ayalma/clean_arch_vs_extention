@@ -17,21 +17,20 @@
   "contributes": {
     "commands": [
       {
-        "command": "clean-arch-vs.new",
-        "title": "Hello World"
+        "command": "clean-arch-vs.new_page",
+        "title": "New Page"
       },
       {
         "command": "clean-arch-vs.new_view",
-        "title":"New View"
+        "title": "New View"
       },
       {
         "command": "clean-arch-vs.new_interactor",
-        "title":"New Interactor"
+        "title": "New Interactor"
       }
     ],
     "menus": {
       "explorer/context": [
-
         {
           "when": "explorerResourceIsFolder",
           "command": "clean-arch-vs.new_interactor",
@@ -39,8 +38,13 @@
         },
         {
           "when": "explorerResourceIsFolder",
-          "command": "clean-arch-vs.new_view",
+          "command": "clean-arch-vs.new_page",
           "group": "0@1"
+        },
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "clean-arch-vs.new_view",
+          "group": "0@2"
         }
       ]
     }
